@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pavillon 9</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <div id="hud" class="hidden">
+    <div id="objective">FUSIBLES <span id="fuseCount">0</span> / 5</div>
+    <div id="crosshair"></div>
+    <div id="prompt"></div>
+    <div id="bars">
+      <div class="bar"><label>LAMPE</label><div class="track"><div id="batt" class="fill"></div></div></div>
+      <div class="bar"><label>SOUFFLE</label><div class="track"><div id="stam" class="fill"></div></div></div>
+    </div>
+    <div id="subtitle"></div>
+  </div>
+
+  <div id="note" class="screen hidden">
+    <div class="paper"><div id="noteText"></div><div class="hint">[E] Fermer</div></div>
+  </div>
+
+  <div id="menu" class="screen">
+    <h1 class="title">PAVILLON<span>9</span></h1>
+    <p class="tag">Il ne dort jamais.</p>
+    <div class="buttons">
+      <button id="btnPlay">Entrer</button>
+      <button id="btnOptions">Options</button>
+      <button id="btnControls">Commandes</button>
+      <button id="btnQuit">Quitter</button>
+    </div>
+    <div id="panelControls" class="panel hidden">
+      <table>
+        <tr><td>Z Q S D / W A S D</td><td>Se déplacer</td></tr>
+        <tr><td>Souris</td><td>Regarder</td></tr>
+        <tr><td>Maj</td><td>Courir (fait du bruit)</td></tr>
+        <tr><td>C / Ctrl</td><td>S'accroupir (discret)</td></tr>
+        <tr><td>F</td><td>Allumer / éteindre la lampe</td></tr>
+        <tr><td>E</td><td>Interagir</td></tr>
+        <tr><td>Échap</td><td>Pause</td></tr>
+      </table>
+      <p class="small">Trouve les 5 fusibles, puis rejoins la porte de SORTIE.<br>La lumière l'attire. Le bruit aussi.</p>
+    </div>
+    <div id="panelOptions" class="panel hidden">
+      <label>Sensibilité souris <input type="range" id="optSens" min="0.2" max="3" step="0.05"></label>
+      <label>Luminosité <input type="range" id="optBright" min="0.4" max="2.5" step="0.05"></label>
+      <label>Volume <input type="range" id="optVol" min="0" max="1.5" step="0.05"></label>
+      <label>Résolution (rétro → nette) <input type="range" id="optQuality" min="0.3" max="1" step="0.05"></label>
+    </div>
+    <p class="warn">À jouer au casque, dans le noir.</p>
+  </div>
+
+  <div id="pause" class="screen hidden">
+    <h2>PAUSE</h2>
+    <div class="buttons"><button id="btnResume">Reprendre</button><button id="btnMenu">Abandonner</button></div>
+  </div>
+
+  <div id="death" class="screen hidden">
+    <h2 class="red">IL T'A TROUVÉ</h2>
+    <p id="deathStats"></p>
+    <div class="buttons"><button id="btnRetry">Recommencer</button><button id="btnMenu2">Menu</button></div>
+  </div>
+
+  <div id="win" class="screen hidden">
+    <h2>TU T'ES ÉCHAPPÉ</h2>
+    <p id="winStats"></p>
+    <p class="small">... pour cette nuit.</p>
+    <div class="buttons"><button id="btnMenu3">Menu</button></div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

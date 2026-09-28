@@ -1,0 +1,42 @@
+{
+  "name": "pavillon9",
+  "productName": "Pavillon 9",
+  "version": "1.0.0",
+  "description": "Pavillon 9 - jeu d'horreur 3D",
+  "main": "electron-main.js",
+  "author": "VaticUI",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build:web": "esbuild src/main.js --bundle --minify --format=iife --outfile=game.js",
+    "start": "npm run build:web && electron .",
+    "dist": "npm run build:web && electron-builder --win portable"
+  },
+  "build": {
+    "appId": "fr.vaticui.pavillon9",
+    "productName": "Pavillon 9",
+    "files": [
+      "electron-main.js",
+      "index.html",
+      "style.css",
+      "game.js"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "build/icon.png",
+      "signExecutable": false
+    },
+    "portable": {
+      "artifactName": "Pavillon9.exe"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2",
+    "three": "^0.186.1"
+  }
+}

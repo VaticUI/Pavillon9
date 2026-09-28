@@ -1,0 +1,46 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #000; color: #cfc7b8; font-family: Georgia, 'Times New Roman', serif; user-select: none; }
+#c { position: fixed; inset: 0; width: 100%; height: 100%; display: block; image-rendering: pixelated; }
+.hidden { display: none !important; }
+
+/* HUD */
+#hud { position: fixed; inset: 0; pointer-events: none; }
+#objective { position: absolute; top: 22px; left: 28px; font-family: 'Courier New', monospace; font-size: 15px; letter-spacing: 3px; color: rgba(220, 200, 170, 0.55); }
+#crosshair { position: absolute; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: rgba(255, 255, 255, 0.35); }
+#prompt { position: absolute; left: 50%; top: 57%; transform: translateX(-50%); font-family: 'Courier New', monospace; font-size: 16px; color: #e8dcc4; text-shadow: 0 0 6px #000; letter-spacing: 1px; }
+#bars { position: absolute; left: 28px; bottom: 26px; display: flex; flex-direction: column; gap: 8px; }
+.bar { display: flex; align-items: center; gap: 10px; }
+.bar label { width: 70px; font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 2px; color: rgba(220, 200, 170, 0.45); }
+.track { width: 150px; height: 4px; background: rgba(255, 255, 255, 0.08); }
+.fill { height: 100%; width: 100%; background: rgba(230, 215, 180, 0.55); transition: width 0.2s; }
+.fill.low { background: rgba(200, 40, 30, 0.8); }
+#subtitle { position: absolute; left: 50%; bottom: 12%; transform: translateX(-50%); max-width: 70%; text-align: center; font-size: 20px; font-style: italic; color: #e6dccb; text-shadow: 0 0 8px #000, 0 0 2px #000; opacity: 0; transition: opacity 0.8s; }
+
+/* Écrans */
+.screen { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.85) 75%); }
+#menu { background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.1) 100%); align-items: flex-start; padding-left: 9vw; }
+.title { font-size: 92px; font-weight: normal; letter-spacing: 18px; color: #d8cfbf; text-shadow: 0 0 20px rgba(160, 0, 0, 0.5); animation: flick 6s infinite; }
+.title span { color: #8a0c0c; margin-left: 20px; text-shadow: 0 0 25px rgba(220, 0, 0, 0.8); }
+@keyframes flick { 0%, 91%, 93%, 96%, 100% { opacity: 1; } 92%, 95% { opacity: 0.25; } 94% { opacity: 0.8; } }
+.tag { font-style: italic; color: #7d7466; letter-spacing: 3px; margin-top: -10px; }
+.buttons { display: flex; flex-direction: column; gap: 6px; margin-top: 18px; }
+.screen:not(#menu) .buttons { align-items: center; }
+button { background: none; border: none; color: #b8ae9c; font-family: Georgia, serif; font-size: 24px; letter-spacing: 4px; text-align: left; padding: 4px 0; cursor: pointer; transition: color 0.2s, transform 0.2s; }
+button:hover { color: #d02a1e; transform: translateX(8px); text-shadow: 0 0 12px rgba(200, 0, 0, 0.6); }
+.panel { background: rgba(10, 8, 6, 0.8); border-left: 2px solid #5a0a0a; padding: 16px 22px; font-size: 15px; min-width: 380px; }
+.panel table td { padding: 3px 18px 3px 0; }
+.panel table td:first-child { font-family: 'Courier New', monospace; color: #e0d4bd; }
+.panel label { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin: 8px 0; }
+.panel input[type=range] { width: 180px; accent-color: #8a0c0c; }
+.small { font-size: 14px; color: #8f8575; margin-top: 10px; line-height: 1.5; }
+.warn { position: absolute; bottom: 26px; left: 9vw; font-size: 13px; color: #5d554a; letter-spacing: 2px; font-style: italic; }
+h2 { font-size: 64px; font-weight: normal; letter-spacing: 12px; color: #d8cfbf; }
+h2.red { color: #a3100c; text-shadow: 0 0 30px rgba(255, 0, 0, 0.5); animation: flick 3s infinite; }
+#deathStats, #winStats { font-family: 'Courier New', monospace; color: #9d9282; letter-spacing: 2px; }
+
+/* Note */
+#note { background: rgba(0, 0, 0, 0.75); }
+.paper { width: min(520px, 90vw); padding: 44px 48px 30px; background: #cbbf9f; color: #2a2118; box-shadow: 0 0 60px #000; transform: rotate(-1.2deg);
+  background-image: repeating-linear-gradient(transparent 0 27px, rgba(60, 80, 140, 0.22) 27px 28px), radial-gradient(ellipse at 80% 90%, rgba(120, 0, 0, 0.25), transparent 30%); }
+#noteText { white-space: pre-wrap; font-family: 'Segoe Print', 'Bradley Hand', 'Comic Sans MS', cursive; font-size: 18px; line-height: 28px; }
+.hint { margin-top: 24px; text-align: right; font-family: 'Courier New', monospace; font-size: 12px; color: #5a4c3a; }
