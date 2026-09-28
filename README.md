@@ -3,7 +3,9 @@
 Jeu d'horreur 3D à la première personne. Un asile abandonné, généré différemment à chaque partie. Trouve les 5 fusibles, rétablis le courant et atteins la porte de SORTIE avant que le Patient 9 ne te trouve.
 
 ## Jouer
-Lance `release/Pavillon9.exe` (portable, aucune installation).
+**[⬇ Télécharger Pavillon9.exe](https://github.com/VaticUI/Pavillon9/releases/latest/download/Pavillon9.exe)** (Windows, portable, aucune installation).
+
+Windows SmartScreen peut avertir (exe non signé) : « Informations complémentaires » → « Exécuter quand même ».
 
 | Touche | Action |
 |---|---|
